@@ -1,7 +1,6 @@
 package com.example.geolocationapplication;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -48,7 +47,7 @@ public class OutActivity extends FragmentActivity implements OnMapReadyCallback,
     private static final int MY_PERMISSION_REQUEST_CODE = 7192;//figure can change
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 300193;//figure can change
 
-
+    //Intervals ad Displacements
     private static int UPDATE_INTERVAL = 10000; //5 seconds
         private static int FASTEST_INTERVAL = 3000;
         private static int DISPLACEMENT = 10;
@@ -83,6 +82,7 @@ public class OutActivity extends FragmentActivity implements OnMapReadyCallback,
         }
     }
 
+        //Get user device location
         private void fetchLocation() {
             if (ActivityCompat.checkSelfPermission(
                     this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
@@ -105,6 +105,7 @@ public class OutActivity extends FragmentActivity implements OnMapReadyCallback,
             });
         }
 
+    //Request location
     private void createLocationRequest() {
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(UPDATE_INTERVAL);
@@ -122,6 +123,7 @@ public class OutActivity extends FragmentActivity implements OnMapReadyCallback,
         mGoogleApiClient.connect();
     }
 
+    //Update user location on movement
     private void startLocationUpdates() {
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
@@ -138,12 +140,9 @@ public class OutActivity extends FragmentActivity implements OnMapReadyCallback,
             googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12.0f));
             googleMap.addMarker(markerOptions);
-            //Move camera to this position
-           // googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude()),12.0f));
 
 
             //Create dangerous area
-
             final LatLng dangerous_area = new LatLng(54.8612, -6.3157);
             Circle circle = googleMap.addCircle(new CircleOptions()
                     .center(dangerous_area)
