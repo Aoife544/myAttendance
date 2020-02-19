@@ -58,6 +58,7 @@ public class ScanQRActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qr);
 
+        //Call xml entities
         cameraPreview = (SurfaceView) findViewById(R.id.cameraPreview);
         txtResult1 = (TextView) findViewById(R.id.txtResult1);
         txtResult2 = (TextView) findViewById(R.id.txtResult2);
@@ -74,6 +75,7 @@ public class ScanQRActivity extends FragmentActivity {
                 .setAutoFocusEnabled(true)
                 .build();
 
+        //Call camera source to camera preview
         cameraPreview.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
