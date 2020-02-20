@@ -59,6 +59,7 @@ public class ScannedQRFragment extends Fragment  {
 
         final View view = inflater.inflate(R.layout.fragment_scanned_qr, container, false);
 
+        //Call and reference xml entities
         myListView = (ListView) view.findViewById(R.id.txtResult1);
         moduleResult = (TextView) view.findViewById(R.id.txtResult2);
         lecturerResult = (TextView) view.findViewById(R.id.txtResult3);
@@ -66,12 +67,14 @@ public class ScannedQRFragment extends Fragment  {
         moduleName = (TextView) view.findViewById(R.id.moduleTitle);
         lecturerName = (TextView) view.findViewById(R.id.lecturerTitle);
 
+        //Call Firebase database and authentication
         mAuth = FirebaseAuth.getInstance();
         myFirebaseDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = myFirebaseDatabase.getReference();
         final FirebaseUser user = mAuth.getCurrentUser();
         userID = user.getUid();
 
+        //Firebase Authentication Listener call
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -86,8 +89,6 @@ public class ScannedQRFragment extends Fragment  {
 
             }
         };
-
-
 
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -152,7 +153,7 @@ public class ScannedQRFragment extends Fragment  {
             }
         });
 
-
+        //Button call to change Fragment
         Button button = (Button) view.findViewById(R.id.completeBtn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
