@@ -67,6 +67,7 @@ public class Profile2Fragment extends Fragment implements View.OnClickListener{
 
         final View view = inflater.inflate(R.layout.fragment_profile2, container, false);
 
+        //Call and reference xml entities
         mListView = (ListView) view.findViewById(R.id.listview);
         mProfileImage = (ImageView) view.findViewById(R.id.profileImage);
 
@@ -77,10 +78,11 @@ public class Profile2Fragment extends Fragment implements View.OnClickListener{
         mAuth = FirebaseAuth.getInstance();
         myFirebaseDatabase = FirebaseDatabase.getInstance();
 
-
+        //call Firebase Database and Storage
         mDatabaseReference = myFirebaseDatabase.getReference();
         mStorage = FirebaseStorage.getInstance().getReference("uploads");
 
+        //call UID
         final FirebaseUser firebaseUser = mAuth.getCurrentUser();
         userID = firebaseUser.getUid();
 
@@ -104,8 +106,7 @@ public class Profile2Fragment extends Fragment implements View.OnClickListener{
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
+                // This method is called once with the initial value and again whenever data at this location is updated.
                 showData(dataSnapshot);
 
             }
@@ -170,6 +171,7 @@ public class Profile2Fragment extends Fragment implements View.OnClickListener{
         }
 
 
+        //Upload profile image from device internal storage to Firebase Storage
         private void uploadImg() {
             final ProgressDialog progressDialog = new ProgressDialog(getContext());
             progressDialog.setMessage("Uploading Image");
@@ -253,6 +255,7 @@ public class Profile2Fragment extends Fragment implements View.OnClickListener{
         }
     }
 
+    //Success of Fail toast message
     private void toastMessage(String message){
         Toast.makeText(getActivity(),message,Toast.LENGTH_SHORT).show();
     }
@@ -276,7 +279,6 @@ public class Profile2Fragment extends Fragment implements View.OnClickListener{
             button.setVisibility(View.GONE);
         }
     }
-
 
 
     //OnClick methods (logout and upload image)
