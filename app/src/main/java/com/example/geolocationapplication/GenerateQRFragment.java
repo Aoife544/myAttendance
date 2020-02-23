@@ -74,16 +74,20 @@ public class GenerateQRFragment extends Fragment implements DatePickerDialog.OnD
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_generate_qr, container, false);
 
+        //call and reference xml entities
         lecturerName = (TextView) view.findViewById(R.id.lecturerNameText);
         comSpinner = (Spinner) view.findViewById(R.id.COMSpinner);
         moduleSpinner = (Spinner) view.findViewById(R.id.ModuleSpinner);
 
+        //call Spinners
         comSpinner.setOnItemSelectedListener(this);
         moduleSpinner.setOnItemSelectedListener(this);
 
         //Date and Time
         dateTxt = (TextView) view.findViewById(R.id.datetext);
         dateBtn = (Button) view.findViewById(R.id.dateBtn);
+
+        //Date button select date from picker
         dateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,6 +102,8 @@ public class GenerateQRFragment extends Fragment implements DatePickerDialog.OnD
                 datePickerDialog.show();
             }
         });
+
+        //Time button select time from picker
         timeTxt = (TextView) view.findViewById(R.id.timetext);
         timeBtn = (Button) view.findViewById((R.id.timeBtn));
         timeBtn.setOnClickListener(new View.OnClickListener() {
@@ -135,6 +141,7 @@ public class GenerateQRFragment extends Fragment implements DatePickerDialog.OnD
         myDatabaseReference = myFirebaseDatabase.getReference("attendance").child("lecturers").child(userID).child("modules");
 
 
+        //Generate QR Code function
         generateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -159,6 +166,7 @@ public class GenerateQRFragment extends Fragment implements DatePickerDialog.OnD
             }
         });
 
+        //Database reference
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -193,6 +201,7 @@ public class GenerateQRFragment extends Fragment implements DatePickerDialog.OnD
         }
     }
 
+    //retrieve COM code from database
     public void retrieveCOM(){
         listener = myDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -213,6 +222,7 @@ public class GenerateQRFragment extends Fragment implements DatePickerDialog.OnD
         });
     }
 
+    //Retrieve module name from database
     public void retrieveModule(){
         listener = myDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -234,6 +244,7 @@ public class GenerateQRFragment extends Fragment implements DatePickerDialog.OnD
     }
 
 
+    //Extend date if only 5 figures
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         yearFinal = year;
@@ -248,6 +259,7 @@ public class GenerateQRFragment extends Fragment implements DatePickerDialog.OnD
         dateTxt.setText(dayFinal + "/" + monthStr + "/" + yearFinal);
     }
 
+    //Extend time if only 3 figures
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         hourFinal = hourOfDay;
@@ -261,6 +273,7 @@ public class GenerateQRFragment extends Fragment implements DatePickerDialog.OnD
         timeTxt.setText(hourFinal + ":" + minString);
     }
 
+    //Get item selection position
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         if(parent.getId() == R.id.COMSpinner)
