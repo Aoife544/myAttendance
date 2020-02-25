@@ -55,6 +55,7 @@ public class EmailQRFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_email_qr, container, false);
 
+        //call and reference xml entities
         text = (EditText) view.findViewById(R.id.edit_text);
         button = (Button) view.findViewById(R.id.sendbtn);
         image = (ImageView) view.findViewById(R.id.imageV);
@@ -62,6 +63,7 @@ public class EmailQRFragment extends Fragment {
 
         Bundle bundle = getArguments();
 
+        //QR Code parameters
         String COM = bundle.getString("COM");
         String module = bundle.getString("Module");
         String lectureName = bundle.getString("LectureName");
@@ -70,7 +72,7 @@ public class EmailQRFragment extends Fragment {
 
         text_view.setText(COM + ", " + module + ", " + lectureName + ", " + date + ", " + time);
 
-
+        //Encode data to QR Code
         text2qr = text_view.getText().toString().trim();
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try{
@@ -84,7 +86,7 @@ public class EmailQRFragment extends Fragment {
         }
 
 
-
+        //Open Email provider
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,7 +113,7 @@ public class EmailQRFragment extends Fragment {
     }
 
 
-
+    //Save bitmap as image to internal storage
     private void saveimage() {
         bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
 
@@ -144,7 +146,7 @@ public class EmailQRFragment extends Fragment {
     }
 
 
-
+    //Send email
     protected void sendEmail(Uri uri) {
         String editTxt = text.getText().toString();
         Log.i("Send email", "");
