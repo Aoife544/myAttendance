@@ -67,8 +67,7 @@ public class Semester1Fragment extends Fragment {
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
+                // This method is called once with the initial value and again whenever data at this location is updated.
                 showImage(dataSnapshot);
 
             }
