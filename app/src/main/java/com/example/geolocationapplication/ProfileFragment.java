@@ -312,7 +312,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 openImage();
                 break;
         }
-        //ADD SWITCH CASE
     }
 
 }

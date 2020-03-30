@@ -30,6 +30,8 @@ public class CheckInFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_check_in, container, false);
+
+        //Button click opens new activity
         Button button = (Button) view.findViewById(R.id.scanBtn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
