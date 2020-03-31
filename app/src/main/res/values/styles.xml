@@ -1,0 +1,83 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorBlack</item>
+    </style>
+
+
+
+    <style name="LargeLabel" parent="android:TextAppearance">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">35dp</item>
+    </style>
+
+    <style name="SmallLabel" parent="android:TextAppearance">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+
+    <style name="QRLabel" parent="android:TextAppearance">
+        <item name="android:textColor">@color/colorLightBlue</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
+    <style name="QRLabel2" parent="android:TextAppearance">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">18dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="bottomBtn" parent="android:TextAppearance">
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="studentName" parent="android:TextAppearance">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="qrCodeTxt" parent="android:TextAppearance">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="qrResultTitle" parent="android:TextAppearance">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="qrResultTxt" parent="android:TextAppearance">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+</resources>

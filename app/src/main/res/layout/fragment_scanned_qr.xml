@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="8">
+
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        app:srcCompat="@drawable/logo2" />
+
+    <Space
+        android:id="@+id/space1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/studentTitle"
+        android:layout_below="@id/space1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        style="@style/qrResultTitle"
+        android:text="@string/student_name_title"
+        />
+
+    <ListView
+        android:id="@+id/txtResult1"
+        android:layout_below="@id/studentTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:divider="@null"
+        style="@style/qrResultTxt"
+        />
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_below="@id/txtResult1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"/>
+
+    <TextView
+        android:id="@+id/moduleTitle"
+        android:layout_below="@id/space2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        style="@style/qrResultTitle"
+        android:text="@string/module_name_title"
+        />
+
+    <TextView
+        android:id="@+id/txtResult2"
+        android:layout_below="@id/moduleTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        style="@style/qrResultTxt"
+        />
+
+    <Space
+        android:id="@+id/space3"
+        android:layout_below="@id/txtResult2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"/>
+
+    <TextView
+        android:id="@+id/lecturerTitle"
+        android:layout_below="@id/space2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        style="@style/qrResultTitle"
+        android:text="@string/lecturer_name_title"
+        />
+
+    <TextView
+        android:id="@+id/txtResult3"
+        android:layout_below="@id/lecturerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        style="@style/qrResultTxt"
+        />
+
+    <Space
+        android:id="@+id/space4"
+        android:layout_below="@id/txtResult3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"/>
+
+    <Button
+        android:id="@+id/completeBtn"
+        android:layout_below="@id/space4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:text="Complete"/>
+
+
+
+</LinearLayout>

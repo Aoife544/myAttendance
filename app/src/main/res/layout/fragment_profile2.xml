@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
+    >
+
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="8">
+
+
+        <ImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:layout_weight="2"
+            android:background="@color/colorPrimary"
+            app:srcCompat="@drawable/logo2" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+
+        android:layout_centerInParent="true"/>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileImage"
+        android:layout_gravity="center"
+        android:divider="@null"
+        />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:layout_below="@id/listview"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        style="@style/qrCodeTxt"
+
+        />
+
+
+
+
+
+</RelativeLayout>

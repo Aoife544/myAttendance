@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_profile_black"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/nav_qr"
+        android:icon="@drawable/qr"
+        android:title="QR Code" />
+
+    <item
+        android:id="@+id/nav_class"
+        android:icon="@drawable/ic_people_black"
+        android:title="Class Attendance" />
+
+</menu>

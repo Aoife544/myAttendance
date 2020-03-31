@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="8"
+    >
+
+
+    <SurfaceView
+        android:id="@+id/cameraPreview"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        />
+
+    <TextView
+        android:id="@+id/txtResult1"
+        android:layout_below="@id/cameraPreview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        style="@style/qrCodeTxt"
+        android:text="Please focus the camera"
+        android:background="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/txtResult2"
+        android:layout_below="@id/cameraPreview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        style="@style/qrCodeTxt"
+        android:text="Results pending..."
+        android:background="@color/colorPrimary"
+        />
+
+</LinearLayout>

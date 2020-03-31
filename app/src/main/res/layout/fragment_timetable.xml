@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="8">
+
+    <ImageView
+        android:id="@+id/smallBanner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        app:srcCompat="@drawable/logo3" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        />
+
+    <Button
+        android:id="@+id/semester1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="semester 1"
+        android:layout_centerHorizontal="true"
+        style="@style/qrCodeTxt"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <Button
+        android:id="@+id/semester2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        style="@style/qrCodeTxt"
+        android:text="SEMESTER 2"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        />
+
+
+
+</LinearLayout>

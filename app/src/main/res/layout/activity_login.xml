@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_uni"
+    android:scaleType="center"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_weight="2"
+            android:background="@color/colorPrimary"
+            app:srcCompat="@drawable/logo2" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/loginTitle"
+        style="@style/LargeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_below="@id/layoutTop"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        style="@style/SmallLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginTitle"
+        android:hint="Email Address"
+        android:textColorHint="@color/colorWhite"
+        android:inputType="textEmailAddress"
+        android:selectAllOnFocus="true"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        style="@style/SmallLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email"
+        android:inputType="textPassword"
+        android:textColorHint="@color/colorWhite"
+        android:hint="@string/prompt_password"
+        android:imeOptions="actionDone"
+        android:selectAllOnFocus="true"/>
+
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/bottomBtn"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"
+            android:text="SIGN IN" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
