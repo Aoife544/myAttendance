@@ -68,6 +68,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         final View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        //call UI entities
         mListView = (ListView) view.findViewById(R.id.listview);
         mProfileImage = (ImageView) view.findViewById(R.id.profileImage);
 
@@ -78,12 +79,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
         myFirebaseDatabase = FirebaseDatabase.getInstance();
 
-
+        //Database Reference
         mDatabaseReference = myFirebaseDatabase.getReference();
 
-
+        //Storage Reference
         mStorage = FirebaseStorage.getInstance().getReference("uploads");
 
+        //UID Reference
         final FirebaseUser firebaseUser = mAuth.getCurrentUser();
         userID = firebaseUser.getUid();
 
@@ -107,8 +109,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
+                // This method is called once with the initial value and again whenever data at this location is updated.
                 showData(dataSnapshot);
 
             }
@@ -265,6 +266,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    //Welcome message
     private void toastMessage(String message){
         Toast.makeText(getActivity(),message,Toast.LENGTH_SHORT).show();
     }
