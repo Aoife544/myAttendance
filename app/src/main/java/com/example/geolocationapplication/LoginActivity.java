@@ -40,13 +40,13 @@ public class LoginActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Call Input Fields
         emailField = findViewById(R.id.email);
         passwordField = findViewById(R.id.password);
 
         //Call Database Reference
         myFirebaseDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = myFirebaseDatabase.getReference();
-
 
         //Call Firebase Authentication Instance
         mAuth = FirebaseAuth.getInstance();
@@ -64,6 +64,7 @@ public class LoginActivity extends AppCompatActivity  {
             }
         };
 
+        //On Database call, carry out task corresponding with database reference
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity  {
 
                     //Get student
                     final String students = ds.child("students").getValue().toString();
+
                     //Get lecturers
                     final String lecturers = ds.child("lecturers").getValue().toString();
 
@@ -87,6 +89,7 @@ public class LoginActivity extends AppCompatActivity  {
                             return;
                         }
 
+                        //Email and Password verification
                         mAuth.signInWithEmailAndPassword(email, password)
                                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                     @Override
@@ -131,13 +134,11 @@ public class LoginActivity extends AppCompatActivity  {
         }
 
 
-    //Get the current user
+    //Apply Authentication listener on program start
     @Override
     public void onStart(){
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
-        //FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
     }
 
     //Validate email and password fields
